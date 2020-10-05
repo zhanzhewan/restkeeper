@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/restkeeper.iml" filepath="$PROJECT_DIR$/.idea/restkeeper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_common/restkeeper_common.iml" filepath="$PROJECT_DIR$/restkeeper_common/restkeeper_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_gateway/restkeeper_gateway.iml" filepath="$PROJECT_DIR$/restkeeper_gateway/restkeeper_gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_service/restkeeper_operator/restkeeper_operator.iml" filepath="$PROJECT_DIR$/restkeeper_service/restkeeper_operator/restkeeper_operator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_service/restkeeper_operator_api/restkeeper_operator_api.iml" filepath="$PROJECT_DIR$/restkeeper_service/restkeeper_operator_api/restkeeper_operator_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_web/restkeeper_operator_web/restkeeper_operator_web.iml" filepath="$PROJECT_DIR$/restkeeper_web/restkeeper_operator_web/restkeeper_operator_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_service/restkeeper_service.iml" filepath="$PROJECT_DIR$/restkeeper_service/restkeeper_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_service/restkeeper_service_common/restkeeper_service_common.iml" filepath="$PROJECT_DIR$/restkeeper_service/restkeeper_service_common/restkeeper_service_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_web/restkeeper_web.iml" filepath="$PROJECT_DIR$/restkeeper_web/restkeeper_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restkeeper_web/restkeeper_web_common/restkeeper_web_common.iml" filepath="$PROJECT_DIR$/restkeeper_web/restkeeper_web_common/restkeeper_web_common.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="restkeeper_service_common" />
+        <module name="restkeeper_common" />
+        <module name="restkeeper_operator_web" />
+        <module name="restkeeper_operator_api" />
+        <module name="restkeeper_operator" />
+        <module name="restkeeper_web_common" />
+        <module name="restkeeper_gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="restkeeper" target="1.8" />
+      <module name="restkeeper_common" target="1.8" />
+      <module name="restkeeper_gateway" target="1.8" />
+      <module name="restkeeper_operator" target="1.8" />
+      <module name="restkeeper_operator_api" target="1.8" />
+      <module name="restkeeper_operator_web" target="1.8" />
+      <module name="restkeeper_service" target="1.8" />
+      <module name="restkeeper_service_common" target="1.8" />
+      <module name="restkeeper_web" target="1.8" />
+      <module name="restkeeper_web_common" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="restkeeper_common" options="-parameters" />
+      <module name="restkeeper_gateway" options="-parameters" />
+      <module name="restkeeper_operator" options="-parameters" />
+      <module name="restkeeper_operator_api" options="-parameters" />
+      <module name="restkeeper_operator_web" options="-parameters" />
+      <module name="restkeeper_service_common" options="-parameters" />
+      <module name="restkeeper_web_common" options="-parameters" />
+    </option>
+  </component>
+</project>
