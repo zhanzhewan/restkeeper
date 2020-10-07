@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.restkeeper.operator.entity.OperatorUser;
 import com.restkeeper.operator.mapper.OperatorUserMapper;
+import javafx.beans.property.ObjectProperty;
 import org.apache.commons.lang.StringUtils;
 import org.apache.dubbo.config.annotation.Service;
 
@@ -18,12 +19,11 @@ public class OperatorUserServiceImpl extends ServiceImpl<OperatorUserMapper, Ope
     public IPage<OperatorUser> queryPageByName(int pageNum, int pageSize, String name) {
 
 
-        IPage<OperatorUser> page = new Page<>(pageNum,pageSize);
-
-        QueryWrapper<OperatorUser> queryWrapper = new QueryWrapper<>();
-        if (StringUtils.isNotEmpty(name)){
-            queryWrapper.like("loginname",name);
+        IPage<OperatorUser> page = new Page<>();
+        QueryWrapper<OperatorUser> wrapper = new QueryWrapper<>();
+        if (StringUtils.isNotEmpty(name)) {
+            wrapper.like("loginname",name);
         }
-        return this.page(page,queryWrapper);
+        return this.page(page,wrapper);
     }
 }

@@ -18,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="restkeeper" target="1.8" />
       <module name="restkeeper_common" target="1.8" />
+      <module name="restkeeper_demo_web" target="1.8" />
       <module name="restkeeper_gateway" target="1.8" />
       <module name="restkeeper_operator" target="1.8" />
       <module name="restkeeper_operator_api" target="1.8" />
@@ -31,6 +32,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="restkeeper_common" options="-parameters" />
+      <module name="restkeeper_demo_web" options="-parameters" />
       <module name="restkeeper_gateway" options="-parameters" />
       <module name="restkeeper_operator" options="-parameters" />
       <module name="restkeeper_operator_api" options="-parameters" />

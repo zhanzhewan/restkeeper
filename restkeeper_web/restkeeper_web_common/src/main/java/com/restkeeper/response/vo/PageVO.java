@@ -9,6 +9,7 @@ import java.util.List;
  * 前端对象转换封装
  * @param <T>
  */
+// 按照前端的要求来定义一个实体类
 @Data
 public class PageVO<T> {
 
@@ -21,6 +22,8 @@ public class PageVO<T> {
     private  long page; //当前页
 
     private List<T> items; //数据记录
+
+
 
     public PageVO(IPage page) {
         this.pagesize = page.getSize();

@@ -35,7 +35,7 @@ public class OperatorUser implements Serializable {
 
     @ApiModelProperty(value = "登录密码")
     @TableField(value = "loginpass")
-    @JsonIgnore
+    @JsonIgnore  // 这个注解就是不把这个字段返回
     private String loginpass;
 
 

@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,13 +18,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * 管理员的登录接口
  */
 @RestController
 @RefreshScope //配置中心的自动刷新
 @Slf4j
-@Api(tags = {"管理员相关接口"})
+@Api(tags = {"Control层"})
 public class UserController{
 
 
@@ -73,12 +76,21 @@ public class UserController{
         return operatorUserService.queryPageByName(pageNum,pageSize,name);
     }
 
+    @GetMapping("/findall")
+    public List<OperatorUser> findAll(){
+        List<OperatorUser> list = operatorUserService.list();
+        return list;
+    }
+
     @ApiOperation("分页列表查询(按照前端要求)")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "path",name= "page",value = "当前页码",required = true,dataType = "Integer"),
             @ApiImplicitParam(paramType = "path",name = "pageSize",value = "每页数据大小",required = true,dataType = "Integer"),
             @ApiImplicitParam(paramType = "query",name = "name",value = "用户名",required = false,dataType = "String"),
     })
+
+
+    // 直接把重新封装的PageVo返回即可
     @GetMapping("/pagevoList/{page}/{pageSize}")
     public PageVO<OperatorUser> findPageVO(@PathVariable("page") int pageNum,
                              @PathVariable("pageSize") int pageSize,
@@ -86,10 +98,17 @@ public class UserController{
 
         IPage<OperatorUser> page = operatorUserService.queryPageByName(pageNum, pageSize, name);
 
-        //int i =1/0;
-
         PageVO<OperatorUser> pageVO = new PageVO<>(page);
         return pageVO;
+    }
+
+    @GetMapping("/add")
+    public void addTest(){
+        OperatorUser operatorUser = new OperatorUser();
+        operatorUser.setLoginname("wangwu");
+        String crypt = Md5Crypt.md5Crypt("123456".getBytes());
+        operatorUser.setLoginpass(crypt);
+        operatorUserService.save(operatorUser);
     }
 
 }
