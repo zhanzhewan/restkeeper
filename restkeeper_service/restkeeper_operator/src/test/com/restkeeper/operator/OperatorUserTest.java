@@ -42,6 +42,7 @@ public class OperatorUserTest {
         map.put(1,"hello");
         map.put(2,"world");
         map.put(3,"good");
+        System.out.println("hello world");
 
         String s = map.computeIfAbsent(4, v -> v + "haha");
 
